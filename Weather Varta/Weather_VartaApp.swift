@@ -11,7 +11,9 @@ import SwiftUI
 struct Weather_VartaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
         }
     }
 }
