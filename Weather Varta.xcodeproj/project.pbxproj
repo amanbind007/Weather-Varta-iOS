@@ -11,7 +11,7 @@
 		5CC47D532B77D82000D9BD3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D522B77D82000D9BD3D /* ContentView.swift */; };
 		5CC47D552B77D82200D9BD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC47D542B77D82200D9BD3D /* Assets.xcassets */; };
 		5CC47D582B77D82200D9BD3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC47D572B77D82200D9BD3D /* Preview Assets.xcassets */; };
-		5CC47D622B77DF8600D9BD3D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D612B77DF8600D9BD3D /* Weather.swift */; };
+		5CC47D622B77DF8600D9BD3D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D612B77DF8600D9BD3D /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		5CC47D522B77D82000D9BD3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5CC47D542B77D82200D9BD3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CC47D572B77D82200D9BD3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5CC47D612B77DF8600D9BD3D /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		5CC47D612B77DF8600D9BD3D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 		5CC47D602B77DF6000D9BD3D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5CC47D612B77DF8600D9BD3D /* Weather.swift */,
+				5CC47D612B77DF8600D9BD3D /* Result.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CC47D532B77D82000D9BD3D /* ContentView.swift in Sources */,
-				5CC47D622B77DF8600D9BD3D /* Weather.swift in Sources */,
+				5CC47D622B77DF8600D9BD3D /* Result.swift in Sources */,
 				5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
