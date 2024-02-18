@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0536CF2B8269FA000E05B5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0536CE2B8269FA000E05B5 /* NetworkManager.swift */; };
 		5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */; };
 		5CC47D532B77D82000D9BD3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D522B77D82000D9BD3D /* ContentView.swift */; };
 		5CC47D552B77D82200D9BD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC47D542B77D82200D9BD3D /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0536CE2B8269FA000E05B5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5CC47D4D2B77D82000D9BD3D /* Weather Varta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Varta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_VartaApp.swift; sourceTree = "<group>"; };
 		5CC47D522B77D82000D9BD3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C0536CD2B8269BD000E05B5 /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5C0536CE2B8269FA000E05B5 /* NetworkManager.swift */,
+			);
+			path = "Network Manager";
+			sourceTree = "<group>";
+		};
 		5CC47D442B77D82000D9BD3D = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		5CC47D4F2B77D82000D9BD3D /* Weather Varta */ = {
 			isa = PBXGroup;
 			children = (
+				5C0536CD2B8269BD000E05B5 /* Network Manager */,
 				5CC47D602B77DF6000D9BD3D /* Model */,
 				5CC47D5F2B77D90B00D9BD3D /* ViewModel */,
 				5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */,
@@ -164,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C0536CF2B8269FA000E05B5 /* NetworkManager.swift in Sources */,
 				5CC47D532B77D82000D9BD3D /* ContentView.swift in Sources */,
 				5CC47D622B77DF8600D9BD3D /* Result.swift in Sources */,
 				5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */,
