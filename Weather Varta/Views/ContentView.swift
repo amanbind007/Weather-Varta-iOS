@@ -16,17 +16,36 @@ struct ContentView: View {
         VStack {
             ScrollView {
                 HStack {
-                    TextField("Enter your City", text: $searchCity)
-                        .foregroundStyle(.pink)
-                        .textFieldStyle(.roundedBorder)
+                    RoundedRectangle(cornerRadius: 25)
+                        .frame(width: 320, height: 40)
+                        .foregroundColor(Color.backgroundCard)
+                        .overlay {
+                            HStack {
+                                Image(systemName: "map.fill")
+                                    .padding()
+                                TextField("Enter your City", text: $searchCity)
+                                    .textFieldStyle(.plain)
+                                    .font(.title3)
+                                    .autocorrectionDisabled()
+                                    .textInputAutocapitalization(.never)
+                                    .submitLabel(.search)
+                                   
+                            }
+                            
+                        }
+                        .padding(1)
+                        
                     
                     Button(action: {}, label: {
-                        Image(systemName: "location.circle.fill").imageScale(.large)
+                        Image(systemName: "location.circle.fill")
+                            .resizable()
+                            .scaledToFit()
                             .foregroundStyle(.blue)
+                            
                     })
                 }
                 
-                Spacer(minLength: 15)
+                Spacer(minLength: 12)
                 
                 VStack {
                     Image(systemName: "cloud.rain")
@@ -56,7 +75,7 @@ struct ContentView: View {
                 .frame(width: 356, height: 270)
                 .background(Color("background_card_big"))
                 .clipShape(RoundedRectangle(cornerRadius: 20))
-                Spacer(minLength: 15)
+                Spacer(minLength: 12)
                 HStack {
                     VStack {
                         HStack {
@@ -72,7 +91,7 @@ struct ContentView: View {
                     .background(Color("background_card"))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     
-                    Spacer(minLength: 15)
+                    Spacer(minLength: 12)
                     
                     VStack {
                         HStack {
@@ -88,7 +107,7 @@ struct ContentView: View {
                     .background(Color("background_card"))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
-                Spacer(minLength: 15)
+                Spacer(minLength: 12)
                 HStack {
                     VStack {
                         HStack {
@@ -104,7 +123,7 @@ struct ContentView: View {
                     .background(Color("background_card"))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     
-                    Spacer(minLength: 15)
+                    Spacer(minLength: 12)
                     
                     VStack {
                         HStack {
