@@ -9,18 +9,23 @@ import Foundation
 
 @Observable
 class NetworkManager {
-    let url = "https://api.openweathermap.org/data/2.5/weather?q=indore&appid=67108a2cd62a3051587cb3ad432b9423&units=imperial"
+    let base_url = "https://api.openweathermap.org/data/2.5/weather?q="
     
     var result: Result?
     
-    func fetchWeatherByLocation(city: String) {
+    func fetchWeatherByName(city: String) {
+        print("City: \(city)")
         let session = URLSession(configuration: .default)
-        session.dataTask(with: URLRequest(url: URL(string: url)!)) { data, _, error in
+        
+        let url = URL(string: base_url + "\(city)&appid=67108a2cd62a3051587cb3ad432b9423&units=imperial")
+        
+        session.dataTask(with: URLRequest(url: url!)) { data, _, error in
             
             if error == nil {
                 let decoder = JSONDecoder()
                 if let safeData = data {
                     do {
+                        print(safeData)
                         let result = try decoder.decode(Result.self, from: safeData)
                         
                         DispatchQueue.main.async {
@@ -28,10 +33,11 @@ class NetworkManager {
                         }
                         
                     } catch {
-                        print(error)
+                        print("Not Found")
                     }
                 }
             }
-        }
+        }.resume()
     }
+    
 }

@@ -12,6 +12,8 @@ struct ContentView: View {
     
     @Environment(\.colorScheme) private var theme
     
+    var networkManager = NetworkManager()
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -29,13 +31,14 @@ struct ContentView: View {
                                     .autocorrectionDisabled()
                                     .textInputAutocapitalization(.never)
                                     .submitLabel(.search)
-                                   
+                                    .onSubmit {
+                                        networkManager.fetchWeatherByName(city: searchCity)
+                                        
+                                    }
                             }
-                            
                         }
                         .padding(1)
                         
-                    
                     Button(action: {}, label: {
                         Image(systemName: "location.circle.fill")
                             .resizable()
@@ -141,7 +144,7 @@ struct ContentView: View {
                 }
             }
         }
-        .navigationTitle("City Name")
+        .navigationTitle("\(networkManager.result?.name ?? "India"), \(networkManager.result?.sys.country ?? "Inodre")")
         .padding()
         .background(Color("background"))
     }

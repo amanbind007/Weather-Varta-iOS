@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C0536CF2B8269FA000E05B5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0536CE2B8269FA000E05B5 /* NetworkManager.swift */; };
+		5CA592782B83C247003431E4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA592772B83C247003431E4 /* LocationManager.swift */; };
 		5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */; };
 		5CC47D532B77D82000D9BD3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D522B77D82000D9BD3D /* ContentView.swift */; };
 		5CC47D552B77D82200D9BD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC47D542B77D82200D9BD3D /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		5C0536CE2B8269FA000E05B5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5CA592772B83C247003431E4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5CC47D4D2B77D82000D9BD3D /* Weather Varta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Varta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_VartaApp.swift; sourceTree = "<group>"; };
 		5CC47D522B77D82000D9BD3D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,14 @@
 			path = "Network Manager";
 			sourceTree = "<group>";
 		};
+		5CA592762B83C21D003431E4 /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5CA592772B83C247003431E4 /* LocationManager.swift */,
+			);
+			path = "Location Manager";
+			sourceTree = "<group>";
+		};
 		5CC47D442B77D82000D9BD3D = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 		5CC47D4F2B77D82000D9BD3D /* Weather Varta */ = {
 			isa = PBXGroup;
 			children = (
+				5CA592762B83C21D003431E4 /* Location Manager */,
 				5C0536CD2B8269BD000E05B5 /* Network Manager */,
 				5CC47D602B77DF6000D9BD3D /* Model */,
 				5CC47D5F2B77D90B00D9BD3D /* ViewModel */,
@@ -177,6 +188,7 @@
 			files = (
 				5C0536CF2B8269FA000E05B5 /* NetworkManager.swift in Sources */,
 				5CC47D532B77D82000D9BD3D /* ContentView.swift in Sources */,
+				5CA592782B83C247003431E4 /* LocationManager.swift in Sources */,
 				5CC47D622B77DF8600D9BD3D /* Result.swift in Sources */,
 				5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */,
 			);
@@ -315,6 +327,7 @@
 				DEVELOPMENT_TEAM = 96U7DGUQDM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationUsageDescription = "Allow location permission to auto detect weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +357,7 @@
 				DEVELOPMENT_TEAM = 96U7DGUQDM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationUsageDescription = "Allow location permission to auto detect weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
