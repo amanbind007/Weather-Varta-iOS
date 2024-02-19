@@ -13,6 +13,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) private var theme
     
     var networkManager = NetworkManager()
+    @ObservedObject var locationManger = LocationDataManager()
     
     var body: some View {
         VStack {
@@ -39,7 +40,9 @@ struct ContentView: View {
                         }
                         .padding(1)
                         
-                    Button(action: {}, label: {
+                    Button(action: {
+                         networkManager.fetchWeatherByLocation(coordinate: locationManger.location!)
+                    }, label: {
                         Image(systemName: "location.circle.fill")
                             .resizable()
                             .scaledToFit()
