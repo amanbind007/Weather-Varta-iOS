@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WeatherView: View {
     @State private var searchCity: String = ""
     
     @Environment(\.colorScheme) private var theme
     
-    var networkManager = NetworkManager()
-    @ObservedObject var locationManger = LocationDataManager()
+    @State private var networkManager = NetworkManager()
+    @State private var locationManger = LocationDataManager()
     
     var body: some View {
         VStack {
@@ -34,14 +34,14 @@ struct ContentView: View {
                                     .submitLabel(.search)
                                     .onSubmit {
                                         networkManager.fetchWeatherByName(city: searchCity)
-                                        
                                     }
                             }
                         }
                         .padding(1)
                         
                     Button(action: {
-                         networkManager.fetchWeatherByLocation(coordinate: locationManger.location!)
+                        locationManger.requestLocation()
+                        networkManager.fetchWeatherByLocation(coordinate: locationManger.location!)
                     }, label: {
                         Image(systemName: "location.circle.fill")
                             .resizable()
@@ -147,14 +147,17 @@ struct ContentView: View {
                 }
             }
         }
-        .navigationTitle("\(networkManager.result?.name ?? "India"), \(networkManager.result?.sys.country ?? "Inodre")")
+        .navigationTitle("Indore, IN")
         .padding()
         .background(Color("background"))
+        .onAppear {
+            locationManger.requestLocation()
+        }
     }
 }
 
 #Preview {
     NavigationStack {
-        ContentView()
+        WeatherView()
     }
 }

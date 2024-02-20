@@ -12,7 +12,7 @@ struct Weather_VartaApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ContentView()
+                WeatherView()
             }
         }
     }

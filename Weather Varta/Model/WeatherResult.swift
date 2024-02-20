@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Result: Codable {
+struct WeatherResult: Codable {
     var weather: [Weather]
     var main: Temperature
     var wind: Wind
@@ -23,16 +23,16 @@ struct Weather: Codable {
 }
 
 struct Temperature: Codable {
-    var temp: Decimal
-    var feels_like: Decimal
-    var temp_min: Decimal
-    var temp_max: Decimal
-    var pressure: Decimal
-    var humidity: Decimal
+    var temp: Double
+    var feels_like: Double
+    var temp_min: Double
+    var temp_max: Double
+    var pressure: Double
+    var humidity: Double
 }
 
 struct Wind: Codable {
-    var speed: Decimal
+    var speed: Double
     var deg: Int
 }
 
