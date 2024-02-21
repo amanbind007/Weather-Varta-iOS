@@ -54,44 +54,108 @@ struct WeatherView: View {
                 Spacer(minLength: 12)
                 
                 VStack {
-                    Image(systemName: "cloud.rain")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 70, height: 70)
-                    
-                    Text("Haze/Cloudy/Whatever")
-                    
-                    HStack(alignment: .top, content: {
-                        Text("35")
+                    HStack(alignment: .top, spacing: 20, content: {
+                        Image(systemName: networkManager.result?.icon_String ?? "sun.max.trianglebadge.exclamationmark")
+                            .symbolRenderingMode(.monochrome)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                            .offset(y: 10)
                         
+                        Text(networkManager.result?.temperature_string ?? "25")
                             .font(.system(size: 80))
-                        
+                            .offset(x: 15)
+                            
                         Text("℃")
-                            .offset(y: 18)
+                            .offset(y: 15)
+                                
                     })
+                    .offset(y:20)
                     
-                    HStack {
-                        Text("High:")
-                        Text("23℃")
+                    Text(networkManager.result?.weather_desc ?? "Clear")
+                        .offset(y: 10)
                         
-                        Text("Low:")
-                        Text("8℃")
+                    
+                    HStack{
+                        Spacer()
+                        VStack {
+                            HStack{
+                                Text("MAX:")
+                                Text(networkManager.result?.max_temp_string ?? "25℃")
+                            }
+                            
+                            HStack{
+                                Text("MIN:")
+                                Text(networkManager.result?.min_temp_string ?? "25℃")
+                            }
+                        }
+                        .offset(y:5)
+                        
+                        Spacer()
+                        HStack {
+                            Image(systemName: "thermometer.medium")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25)
+                            
+                            VStack {
+                                Text(networkManager.result?.temp_feels_like_string ?? "25℃")
+                                    .font(.largeTitle)
+                                    .offset(y: 5)
+                                Text("FEELS LIKE")
+                                    .font(.caption2)
+                            }
+                        }
+                        Spacer()
+                        
                     }
                 }
-                .frame(width: 356, height: 270)
+                .frame(width: 356, height: 250)
                 .background(Color("background_card_big"))
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 Spacer(minLength: 12)
+                
                 HStack {
-                    VStack {
+                    VStack(alignment: .leading) {
                         HStack {
-                            Image(systemName: "humidity")
-                            
-                            VStack {
-                                Text("fsdfsdfsf")
-                                Text("232342424")
+                            Image(systemName: "eye")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                
+                            VStack(alignment: .leading) {
+                                HStack{
+                                    Text("10")
+                                        .font(.title2)
+                                    Text("km")
+                                        .font(.footnote)
+                                        .offset(x:-5, y:2)
+                                }
+                                
+                                Text("VISIBILITY")
+                                    .font(.caption2)
+                            }
+                        }.offset(x:20)
+                        
+                        Divider()
+                        HStack {
+                            Image(systemName: "cloud")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                            VStack(alignment: .leading) {
+                                HStack{
+                                    Text("60")
+                                        .font(.title2)
+                                    Text("%")
+                                        .font(.footnote)
+                                        .offset(x:-5, y:2)
+                                }
+                                Text("CLOUDINESS")
+                                    .font(.caption2)
                             }
                         }
+                        .offset(x:20)
                     }
                     .frame(width: 173, height: 140)
                     .background(Color("background_card"))
@@ -99,15 +163,45 @@ struct WeatherView: View {
                     
                     Spacer(minLength: 12)
                     
-                    VStack {
-                        HStack {
-                            Image(systemName: "wind")
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Image(systemName: "gauge.with.dots.needle.bottom.50percent")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                           
+                                Text("1019")
+                                    .font(.title2)
+                                    
                             
-                            VStack {
-                                Text("fsdfsdfsf")
-                                Text("232342424")
-                            }
+                            
+                                
+                            Text("PRESSURE")
+                                .font(.caption2)
                         }
+                        Spacer()
+                        Divider()
+                        Spacer()
+                        VStack {
+                            Image(systemName: "humidity.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                            HStack{
+                                Text("50")
+                                    .font(.title2)
+                                    
+                                Text("%")
+                                    .font(.footnote)
+                                    .offset(x:-5, y:2)
+                            }
+                            .offset(y:-5)
+                            
+                            Text("HUMIDITY")
+                                .font(.caption2)
+                        }
+                        Spacer()
                     }
                     .frame(width: 173, height: 140)
                     .background(Color("background_card"))
@@ -115,15 +209,35 @@ struct WeatherView: View {
                 }
                 Spacer(minLength: 12)
                 HStack {
-                    VStack {
+                    VStack(alignment: .leading) {
                         HStack {
-                            Image(systemName: "humidity")
-                            
-                            VStack {
-                                Text("fsdfsdfsf")
-                                Text("232342424")
+                            Image(systemName: "wind")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                
+                            VStack(alignment: .leading) {
+                                Text("39 KPH")
+                                    .font(.title2)
+                                Text("WIND SPEED")
+                                    .font(.caption2)
+                            }
+                        }.offset(x:20)
+                        
+                        Divider()
+                        HStack {
+                            Image(systemName: "safari")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                            VStack(alignment: .leading) {
+                                Text("NNE")
+                                    .font(.title2)
+                                Text("WIND DIRECTION")
+                                    .font(.caption2)
                             }
                         }
+                        .offset(x:20)
                     }
                     .frame(width: 173, height: 140)
                     .background(Color("background_card"))
@@ -131,15 +245,48 @@ struct WeatherView: View {
                     
                     Spacer(minLength: 12)
                     
-                    VStack {
-                        HStack {
-                            Image(systemName: "humidity")
+                    HStack {
+                        
+                        VStack {
+                            Image(systemName: "sunrise.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25)
                             
-                            VStack {
-                                Text("fsdfsdfsf")
-                                Text("232342424")
+                            HStack{
+                                Text("5:30")
+                                    .font(.title3)
+                                    .offset(y: -5)
+                                Text("PM")
+                                    .font(.caption2)
+                                    .offset(x:-5, y:-5)
                             }
+                                
+                            Text("SUNRISE")
+                                .font(.caption2)
                         }
+                        
+                        Divider()
+                        
+                        VStack {
+                            Image(systemName: "sunset.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25)
+                            
+                            HStack{
+                                Text("5:30")
+                                    .font(.title3)
+                                    .offset(y: -5)
+                                Text("PM")
+                                    .font(.caption2)
+                                    .offset(x:-5, y:-5)
+                            }
+                            Text("SUNSET")
+                                .font(.caption2)
+                        }
+                        
+                        
                     }
                     .frame(width: 173, height: 140)
                     .background(Color("background_card"))
@@ -147,7 +294,7 @@ struct WeatherView: View {
                 }
             }
         }
-        .navigationTitle("Indore, IN")
+        .navigationTitle(networkManager.result?.location_full_name ?? "--")
         .padding()
         .background(Color("background"))
         .onAppear {

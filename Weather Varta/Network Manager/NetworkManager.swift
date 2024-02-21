@@ -14,11 +14,12 @@ class NetworkManager {
     
     var result: WeatherModel?
     
+    
     func fetchWeatherByName(city: String) {
         print("City: \(city)")
         let session = URLSession(configuration: .default)
         
-        let url = URL(string: base_url + "q=\(city)&appid=67108a2cd62a3051587cb3ad432b9423&units=imperial")
+        let url = URL(string: base_url + "q=\(city)&appid=67108a2cd62a3051587cb3ad432b9423&units=metric")
         
         session.dataTask(with: URLRequest(url: url!)) { data, _, error in
             
@@ -53,6 +54,7 @@ class NetworkManager {
 
             let weather_id = decodedData.weather[0].id
             let weather_desc = decodedData.weather[0].description
+            let weather_icon = decodedData.weather[0].icon
             let temperature = decodedData.main.temp
             let min_temp = decodedData.main.temp_min
             let max_temp = decodedData.main.temp_max
@@ -60,12 +62,12 @@ class NetworkManager {
             let pressure = decodedData.main.pressure
             let humidity = decodedData.main.humidity
             let wind_speed = decodedData.wind.speed
-            let wind_direction = decodedData.wind.deg
+            let wind_degree = decodedData.wind.deg
             let cloudiness = decodedData.clouds.all
             let city_name = decodedData.name
             let country = decodedData.sys.country
             
-            result = WeatherModel(weather_id: weather_id, weather_desc: weather_desc, temperature: temperature, min_temp: min_temp, max_temp: max_temp, temp_feels_like: temp_feels_like, pressure: pressure, humidity: humidity, wind_speed: wind_speed, wind_direction: wind_direction, cloudiness: cloudiness, city_name: city_name, country: country)
+            result = WeatherModel(weather_id: weather_id, weather_desc: weather_desc, weather_icon: weather_icon, temperature: temperature, min_temp: min_temp, max_temp: max_temp, temp_feels_like: temp_feels_like, pressure: pressure, humidity: humidity, wind_speed: wind_speed, wind_degree: wind_degree, cloudiness: cloudiness, city_name: city_name, country: country)
             
         } catch {
             print("Could Not Prase the JSON because : \(error.localizedDescription)")
