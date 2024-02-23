@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5C0536CF2B8269FA000E05B5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0536CE2B8269FA000E05B5 /* NetworkManager.swift */; };
+		5C6CFFDD2B890E5400425824 /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFDC2B890E5400425824 /* WeatherCard.swift */; };
+		5C6CFFDF2B890EE800425824 /* SunriseSunsetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFDE2B890EE800425824 /* SunriseSunsetCard.swift */; };
+		5C6CFFE12B890F2A00425824 /* CloudinessVisibilityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE02B890F2A00425824 /* CloudinessVisibilityCard.swift */; };
+		5C6CFFE32B890F7D00425824 /* HumidityPressureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE22B890F7D00425824 /* HumidityPressureCard.swift */; };
+		5C6CFFE52B890FC700425824 /* WindSpeedAndDirectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE42B890FC700425824 /* WindSpeedAndDirectionCard.swift */; };
+		5C6CFFE72B89101F00425824 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE62B89101F00425824 /* SearchBarView.swift */; };
 		5C9FFE752B84FEF5000B5B4D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FFE742B84FEF5000B5B4D /* WeatherModel.swift */; };
 		5CA592782B83C247003431E4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA592772B83C247003431E4 /* LocationManager.swift */; };
 		5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */; };
@@ -19,6 +25,12 @@
 
 /* Begin PBXFileReference section */
 		5C0536CE2B8269FA000E05B5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5C6CFFDC2B890E5400425824 /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
+		5C6CFFDE2B890EE800425824 /* SunriseSunsetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseSunsetCard.swift; sourceTree = "<group>"; };
+		5C6CFFE02B890F2A00425824 /* CloudinessVisibilityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinessVisibilityCard.swift; sourceTree = "<group>"; };
+		5C6CFFE22B890F7D00425824 /* HumidityPressureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityPressureCard.swift; sourceTree = "<group>"; };
+		5C6CFFE42B890FC700425824 /* WindSpeedAndDirectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedAndDirectionCard.swift; sourceTree = "<group>"; };
+		5C6CFFE62B89101F00425824 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		5C9FFE742B84FEF5000B5B4D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		5CA592772B83C247003431E4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5CC47D4D2B77D82000D9BD3D /* Weather Varta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Varta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				5CC47D522B77D82000D9BD3D /* WeatherView.swift */,
+				5C6CFFE62B89101F00425824 /* SearchBarView.swift */,
+				5C6CFFE42B890FC700425824 /* WindSpeedAndDirectionCard.swift */,
+				5C6CFFE22B890F7D00425824 /* HumidityPressureCard.swift */,
+				5C6CFFE02B890F2A00425824 /* CloudinessVisibilityCard.swift */,
+				5C6CFFDE2B890EE800425824 /* SunriseSunsetCard.swift */,
+				5C6CFFDC2B890E5400425824 /* WeatherCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,12 +207,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C6CFFDD2B890E5400425824 /* WeatherCard.swift in Sources */,
 				5C0536CF2B8269FA000E05B5 /* NetworkManager.swift in Sources */,
 				5CC47D532B77D82000D9BD3D /* WeatherView.swift in Sources */,
 				5CA592782B83C247003431E4 /* LocationManager.swift in Sources */,
+				5C6CFFE72B89101F00425824 /* SearchBarView.swift in Sources */,
 				5CC47D622B77DF8600D9BD3D /* WeatherResult.swift in Sources */,
 				5C9FFE752B84FEF5000B5B4D /* WeatherModel.swift in Sources */,
 				5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */,
+				5C6CFFE52B890FC700425824 /* WindSpeedAndDirectionCard.swift in Sources */,
+				5C6CFFE32B890F7D00425824 /* HumidityPressureCard.swift in Sources */,
+				5C6CFFE12B890F2A00425824 /* CloudinessVisibilityCard.swift in Sources */,
+				5C6CFFDF2B890EE800425824 /* SunriseSunsetCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
