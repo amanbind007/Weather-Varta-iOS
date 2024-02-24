@@ -9,7 +9,7 @@ import CoreLocationUI
 import SwiftUI
 
 struct WeatherView: View {
-    @State private var searchCity: String = ""
+    @State var searchCity: String = "aman"
     
     @Environment(\.colorScheme) private var theme
     
@@ -26,7 +26,7 @@ struct WeatherView: View {
             else {
                 VStack {
                     ScrollView {
-                        SearchBarView(searchCity: $searchCity, networkManager: $networkManager, locationManager: $locationManager)
+                        SearchBarView(searchCity: $searchCity, networkManager: networkManager, locationManager: locationManager)
                         
                         Spacer(minLength: 12)
                         WeatherCard()

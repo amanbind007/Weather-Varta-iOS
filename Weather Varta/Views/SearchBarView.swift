@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    
     @Binding var searchCity: String
-    @Binding var networkManager: NetworkManager
-    @Binding var locationManager: LocationDataManager
+    
+    var networkManager: NetworkManager
+    var locationManager: LocationDataManager
     
     var body: some View {
         HStack {
@@ -22,12 +22,13 @@ struct SearchBarView: View {
                     HStack {
                         Image(systemName: "map.fill")
                             .padding()
+                        
                         TextField("Enter your City", text: $searchCity)
                             .textFieldStyle(.plain)
                             .font(.title3)
                             .autocorrectionDisabled()
                             .textInputAutocapitalization(.never)
-                            .submitLabel(.search)
+                            .keyboardType(.webSearch)
                             .onSubmit {
                                 networkManager.fetchWeatherByName(city: searchCity)
                             }
@@ -36,7 +37,6 @@ struct SearchBarView: View {
                 .padding(1)
                 
             Button(action: {
-                locationManager.requestLocation()
                 networkManager.fetchWeatherByLocation(coordinate: locationManager.location!)
             }, label: {
                 Image(systemName: "location.circle.fill")
@@ -50,5 +50,5 @@ struct SearchBarView: View {
 }
 
 #Preview {
-    SearchBarView(searchCity: .constant(""), networkManager: .constant(NetworkManager()), locationManager: .constant(LocationDataManager()))
+    SearchBarView(searchCity: .constant(""), networkManager: NetworkManager(), locationManager: LocationDataManager())
 }
