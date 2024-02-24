@@ -43,4 +43,6 @@ struct Cloud: Codable {
 
 struct System: Codable {
     var country: String
+    var sunrise: Double
+    var sunset: Double
 }

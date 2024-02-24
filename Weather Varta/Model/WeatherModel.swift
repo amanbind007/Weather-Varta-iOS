@@ -22,6 +22,8 @@ struct WeatherModel {
     var cloudiness: Int
     var city_name: String
     var country: String
+    var sunrise: String
+    var sunset: String
     
     var icon_String: String {
         switch weather_icon {
@@ -93,35 +95,35 @@ struct WeatherModel {
         case 348.75...360:
             return "North"
         case 11.25...33.75:
-            return "North North East"
+            return "NNE"
         case 33.75...56.25:
-            return "North East"
+            return "NE"
         case 56.25...78.75:
-            return "East North East"
+            return "ENE"
         case 78.75...101.25:
             return "East"
         case 101.25...123.75:
-            return "East South East"
+            return "ESE"
         case 123.75...146.25:
-            return "South East"
+            return "SE"
         case 146.25...168.75:
-            return "South South East"
+            return "SSE"
         case 168.75...191.25:
             return "South"
         case 191.25...213.75:
-            return "South South West"
+            return "SSW"
         case 213.75...236.25:
-            return "South West"
+            return "SW"
         case 236.25...258.75:
-            return "West South West"
+            return "WSW"
         case 258.75...281.25:
             return "West"
         case 281.25...303.75:
-            return "West North West"
+            return "WNW"
         case 303.75...326.25:
-            return "North West"
+            return "NW"
         case 326.25...348.75:
-            return "North North West"
+            return "NNE"
             
         default:
             return "error"

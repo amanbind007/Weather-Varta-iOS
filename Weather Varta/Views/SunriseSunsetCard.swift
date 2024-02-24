@@ -8,6 +8,27 @@
 import SwiftUI
 
 struct SunriseSunsetCard: View {
+    var sunset: String
+    var sunrise: String
+    
+    var sunset_time: String
+    var sunset_meridian: String
+    var sunrise_time: String
+    var sunrise_meridian: String
+    
+    init(sunset: String, sunrise: String) {
+        self.sunset = sunset
+        self.sunrise = sunrise
+        let time_parts1 = sunset.split(separator: " ")
+        sunset_time = String(time_parts1[0])
+        sunset_meridian = String(time_parts1[1])
+        let time_parts2 = sunset.split(separator: " ")
+        sunrise_time = String(time_parts2[0])
+        sunrise_meridian = String(time_parts2[1])
+    }
+    
+    
+    
     var body: some View {
         HStack {
             VStack {
@@ -17,17 +38,18 @@ struct SunriseSunsetCard: View {
                     .frame(width: 25)
                 
                 HStack {
-                    Text("5:30")
+                    Text(sunrise_time)
                         .font(.title3)
                         .offset(y: -5)
-                    Text("PM")
+                    Text(sunrise_meridian)
                         .font(.caption2)
-                        .offset(x: -5, y: -5)
+                        .offset(x: -6, y: -5)
                 }
-                    
+                
                 Text("SUNRISE")
                     .font(.caption2)
             }
+            .offset(x: 5)
             
             Divider()
             
@@ -38,12 +60,12 @@ struct SunriseSunsetCard: View {
                     .frame(width: 25)
                 
                 HStack {
-                    Text("5:30")
+                    Text(sunset_time)
                         .font(.title3)
                         .offset(y: -5)
-                    Text("PM")
+                    Text(sunset_meridian)
                         .font(.caption2)
-                        .offset(x: -5, y: -5)
+                        .offset(x: -6, y: -5)
                 }
                 Text("SUNSET")
                     .font(.caption2)
@@ -56,5 +78,5 @@ struct SunriseSunsetCard: View {
 }
 
 #Preview {
-    SunriseSunsetCard()
+    SunriseSunsetCard(sunset: "06:30 PM", sunrise: "06:30: AM")
 }

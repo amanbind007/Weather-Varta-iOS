@@ -14,7 +14,6 @@ class NetworkManager {
     
     var result: WeatherModel?
     
-    
     func fetchWeatherByName(city: String) {
         print("City: \(city)")
         let session = URLSession(configuration: .default)
@@ -67,7 +66,18 @@ class NetworkManager {
             let city_name = decodedData.name
             let country = decodedData.sys.country
             
-            result = WeatherModel(weather_id: weather_id, weather_desc: weather_desc, weather_icon: weather_icon, temperature: temperature, min_temp: min_temp, max_temp: max_temp, temp_feels_like: temp_feels_like, pressure: pressure, humidity: humidity, wind_speed: wind_speed, wind_degree: wind_degree, cloudiness: cloudiness, city_name: city_name, country: country)
+            let sunriseDate = Date(timeIntervalSince1970: decodedData.sys.sunrise)
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            let sunrise = dateFormatter.string(from: sunriseDate)
+            
+            let sunsetDate = Date(timeIntervalSince1970: decodedData.sys.sunset)
+            let sunset = dateFormatter.string(from: sunsetDate)
+            
+            print("Sunrise: \(sunrise)\nSunset: \(sunset)")
+            
+            result = WeatherModel(weather_id: weather_id, weather_desc: weather_desc, weather_icon: weather_icon, temperature: temperature, min_temp: min_temp, max_temp: max_temp, temp_feels_like: temp_feels_like, pressure: pressure, humidity: humidity, wind_speed: wind_speed, wind_degree: wind_degree, cloudiness: cloudiness, city_name: city_name, country: country, sunrise: sunrise, sunset: sunset)
             
         } catch {
             print("Could Not Prase the JSON because : \(error.localizedDescription)")

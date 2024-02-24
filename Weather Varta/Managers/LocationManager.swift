@@ -16,6 +16,8 @@ class LocationDataManager: NSObject, CLLocationManagerDelegate {
     var authorizationStatus: CLAuthorizationStatus?
     var location: CLLocationCoordinate2D?
     
+    var isLoading: Bool = false
+    
     override init() {
         super.init()
         locationManager.delegate = self
@@ -46,11 +48,13 @@ class LocationDataManager: NSObject, CLLocationManagerDelegate {
     
     func requestLocation() {
         locationManager.requestLocation()
+        isLoading = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Insert code to handle location updates
         location = locations.first?.coordinate
+        isLoading = false
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

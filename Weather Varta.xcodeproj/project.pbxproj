@@ -14,6 +14,7 @@
 		5C6CFFE32B890F7D00425824 /* HumidityPressureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE22B890F7D00425824 /* HumidityPressureCard.swift */; };
 		5C6CFFE52B890FC700425824 /* WindSpeedAndDirectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE42B890FC700425824 /* WindSpeedAndDirectionCard.swift */; };
 		5C6CFFE72B89101F00425824 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE62B89101F00425824 /* SearchBarView.swift */; };
+		5C8BF55F2B8A2BB60099903C /* WeatherViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BF55E2B8A2BB60099903C /* WeatherViewViewModel.swift */; };
 		5C9FFE752B84FEF5000B5B4D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FFE742B84FEF5000B5B4D /* WeatherModel.swift */; };
 		5CA592782B83C247003431E4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA592772B83C247003431E4 /* LocationManager.swift */; };
 		5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */; };
@@ -31,6 +32,7 @@
 		5C6CFFE22B890F7D00425824 /* HumidityPressureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityPressureCard.swift; sourceTree = "<group>"; };
 		5C6CFFE42B890FC700425824 /* WindSpeedAndDirectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedAndDirectionCard.swift; sourceTree = "<group>"; };
 		5C6CFFE62B89101F00425824 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		5C8BF55E2B8A2BB60099903C /* WeatherViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewViewModel.swift; sourceTree = "<group>"; };
 		5C9FFE742B84FEF5000B5B4D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		5CA592772B83C247003431E4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5CC47D4D2B77D82000D9BD3D /* Weather Varta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Varta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,20 +54,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5C0536CD2B8269BD000E05B5 /* Network Manager */ = {
+		5C8BF55D2B8A2AAB0099903C /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		5CA592762B83C21D003431E4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				5C0536CE2B8269FA000E05B5 /* NetworkManager.swift */,
-			);
-			path = "Network Manager";
-			sourceTree = "<group>";
-		};
-		5CA592762B83C21D003431E4 /* Location Manager */ = {
-			isa = PBXGroup;
-			children = (
 				5CA592772B83C247003431E4 /* LocationManager.swift */,
 			);
-			path = "Location Manager";
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		5CC47D442B77D82000D9BD3D = {
@@ -87,9 +89,9 @@
 		5CC47D4F2B77D82000D9BD3D /* Weather Varta */ = {
 			isa = PBXGroup;
 			children = (
+				5C8BF55D2B8A2AAB0099903C /* Global */,
 				5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */,
-				5CA592762B83C21D003431E4 /* Location Manager */,
-				5C0536CD2B8269BD000E05B5 /* Network Manager */,
+				5CA592762B83C21D003431E4 /* Managers */,
 				5CC47D602B77DF6000D9BD3D /* Model */,
 				5CC47D5F2B77D90B00D9BD3D /* ViewModel */,
 				5CC47D5E2B77D8FD00D9BD3D /* Views */,
@@ -124,6 +126,7 @@
 		5CC47D5F2B77D90B00D9BD3D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5C8BF55E2B8A2BB60099903C /* WeatherViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C6CFFDD2B890E5400425824 /* WeatherCard.swift in Sources */,
+				5C8BF55F2B8A2BB60099903C /* WeatherViewViewModel.swift in Sources */,
 				5C0536CF2B8269FA000E05B5 /* NetworkManager.swift in Sources */,
 				5CC47D532B77D82000D9BD3D /* WeatherView.swift in Sources */,
 				5CA592782B83C247003431E4 /* LocationManager.swift in Sources */,

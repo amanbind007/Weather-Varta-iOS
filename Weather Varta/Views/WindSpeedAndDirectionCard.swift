@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct WindSpeedAndDirectionCard: View {
+    
+    var windSpeed: Double
+    var windDirection: String
+    
     var body: some View {
         HStack {
             VStack {
@@ -17,7 +21,7 @@ struct WindSpeedAndDirectionCard: View {
                     .frame(width: 20)
                     
                 HStack {
-                    Text("3.6")
+                    Text("\(windSpeed)")
                         .font(.title2)
                     
                     Text("m/s")
@@ -37,7 +41,7 @@ struct WindSpeedAndDirectionCard: View {
                     .scaledToFit()
                     .frame(width: 20)
                 
-                Text("NNE")
+                Text(windDirection)
                     .font(.title2)
                 Text("WIND\nDIRECTION")
                     .font(.caption2)
@@ -52,5 +56,5 @@ struct WindSpeedAndDirectionCard: View {
 }
 
 #Preview {
-    WindSpeedAndDirectionCard()
+    WindSpeedAndDirectionCard(windSpeed: 5.6, windDirection: "NNE")
 }
