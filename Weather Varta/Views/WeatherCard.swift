@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct WeatherCard: View {
+    
+    var temp: String
+    var temp_min: String
+    var temp_max: String
+    var icon: String
+    var feels_like: String
+    
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 20, content: {
-                Image(systemName: "sun.max.trianglebadge.exclamationmark")
+                Image(systemName: icon)
                     .symbolRenderingMode(.monochrome)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 80, height: 80)
                     .offset(y: 10)
                 
-                Text("25")
+                Text("\(temp)")
                     .font(.system(size: 80))
                     .offset(x: 15)
                     
@@ -36,12 +43,12 @@ struct WeatherCard: View {
                 VStack {
                     HStack {
                         Text("MAX:")
-                        Text("25℃")
+                        Text("\(temp_max)℃")
                     }
                     
                     HStack {
                         Text("MIN:")
-                        Text("25℃")
+                        Text("\(temp_min)℃")
                     }
                 }
                 .offset(y: 5)
@@ -52,9 +59,10 @@ struct WeatherCard: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 25)
+                        .offset(y:6)
                     
                     VStack {
-                        Text("25℃")
+                        Text("\(feels_like)℃")
                             .font(.largeTitle)
                             .offset(y: 5)
                         Text("FEELS LIKE")
@@ -71,5 +79,5 @@ struct WeatherCard: View {
 }
 
 #Preview {
-    WeatherCard()
+    WeatherCard(temp: "25.6", temp_min: "15.0", temp_max: "30.5", icon: "cloud", feels_like: "27.0")
 }

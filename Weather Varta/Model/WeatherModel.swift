@@ -15,8 +15,8 @@ struct WeatherModel {
     var min_temp: Double
     var max_temp: Double
     var temp_feels_like: Double
-    var pressure: Double
-    var humidity: Double
+    var pressure: Int
+    var humidity: Int
     var wind_speed: Double
     var wind_degree: Double
     var cloudiness: Int

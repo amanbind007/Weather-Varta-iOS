@@ -10,8 +10,8 @@ import SwiftUI
 struct SearchBarView: View {
     @Binding var searchCity: String
     
-    var networkManager: NetworkManager
-    var locationManager: LocationDataManager
+    @Binding var networkManager: NetworkManager
+    @Binding var locationManager: LocationDataManager
     
     var body: some View {
         HStack {
@@ -50,5 +50,5 @@ struct SearchBarView: View {
 }
 
 #Preview {
-    SearchBarView(searchCity: .constant(""), networkManager: NetworkManager(), locationManager: LocationDataManager())
+    SearchBarView(searchCity: .constant(""), networkManager: .constant(NetworkManager()), locationManager: .constant(LocationDataManager()))
 }

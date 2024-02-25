@@ -8,26 +8,19 @@
 import SwiftUI
 
 struct SunriseSunsetCard: View {
-    var sunset: String
-    var sunrise: String
-    
     var sunset_time: String
     var sunset_meridian: String
     var sunrise_time: String
     var sunrise_meridian: String
     
     init(sunset: String, sunrise: String) {
-        self.sunset = sunset
-        self.sunrise = sunrise
         let time_parts1 = sunset.split(separator: " ")
         sunset_time = String(time_parts1[0])
         sunset_meridian = String(time_parts1[1])
-        let time_parts2 = sunset.split(separator: " ")
+        let time_parts2 = sunrise.split(separator: " ")
         sunrise_time = String(time_parts2[0])
         sunrise_meridian = String(time_parts2[1])
     }
-    
-    
     
     var body: some View {
         HStack {

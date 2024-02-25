@@ -8,6 +8,19 @@
 import SwiftUI
 
 struct HumidityPressureCard: View {
+    var pressure: String
+    var humidity: Int
+    
+    init(pressure: Int, humidity: Int) {
+        self.humidity = humidity
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formattedNumber = numberFormatter.string(from: NSNumber(value: pressure))
+        
+        self.pressure = formattedNumber!
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -18,7 +31,7 @@ struct HumidityPressureCard: View {
                     
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("50")
+                        Text("\(humidity)")
                             .font(.title2)
                         Text("%")
                             .font(.footnote)
@@ -38,7 +51,7 @@ struct HumidityPressureCard: View {
                     .frame(width: 20)
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("1,019")
+                        Text(pressure)
                             .font(.title2)
                         Text("hPa")
                             .font(.footnote)
@@ -57,5 +70,5 @@ struct HumidityPressureCard: View {
 }
 
 #Preview {
-    HumidityPressureCard()
+    HumidityPressureCard(pressure: 1024, humidity: 60)
 }
