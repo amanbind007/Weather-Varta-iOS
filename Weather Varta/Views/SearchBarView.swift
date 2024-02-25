@@ -37,7 +37,8 @@ struct SearchBarView: View {
                 .padding(1)
                 
             Button(action: {
-                networkManager.fetchWeatherByLocation(coordinate: locationManager.location!)
+                locationManager.requestLocation()
+                
             }, label: {
                 Image(systemName: "location.circle.fill")
                     .resizable()
@@ -46,6 +47,7 @@ struct SearchBarView: View {
                     
             })
         }
+        
     }
 }
 

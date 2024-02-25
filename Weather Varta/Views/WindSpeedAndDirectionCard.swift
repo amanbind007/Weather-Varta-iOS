@@ -9,8 +9,16 @@ import SwiftUI
 
 struct WindSpeedAndDirectionCard: View {
     
-    var windSpeed: Double
+    var windSpeed: String
     var windDirection: String
+    
+    init(windSpeed: Double, windDirection: String) {
+        
+        self.windDirection = windDirection
+        
+        self.windSpeed = String(format: "%.2f", windSpeed)
+        
+    }
     
     var body: some View {
         HStack {

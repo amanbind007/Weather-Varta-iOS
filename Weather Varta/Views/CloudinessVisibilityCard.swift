@@ -8,6 +8,18 @@
 import SwiftUI
 
 struct CloudinessVisibilityCard: View {
+    
+    var visibility: String
+    var cloudiness: Int
+    
+    init(visibility: Double, cloudiness: Int) {
+        
+        self.cloudiness = cloudiness
+        
+        let visi = visibility/1000
+        self.visibility = String(format: "%.3f", visi)
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -18,7 +30,7 @@ struct CloudinessVisibilityCard: View {
                     
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("6.0")
+                        Text("\(visibility)")
                             .font(.title2)
                         Text("km")
                             .font(.footnote)
@@ -38,7 +50,7 @@ struct CloudinessVisibilityCard: View {
                     .frame(width: 20)
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("50")
+                        Text("\(cloudiness)")
                             .font(.title2)
                         Text("%")
                             .font(.footnote)
@@ -57,5 +69,5 @@ struct CloudinessVisibilityCard: View {
 }
 
 #Preview {
-    CloudinessVisibilityCard()
+    CloudinessVisibilityCard(visibility: 6432, cloudiness: 50)
 }

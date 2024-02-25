@@ -20,6 +20,7 @@ struct WeatherModel {
     var wind_speed: Double
     var wind_degree: Double
     var cloudiness: Int
+    var visibility: Double
     var city_name: String
     var country: String
     var sunrise: String

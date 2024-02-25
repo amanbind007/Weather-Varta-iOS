@@ -38,7 +38,7 @@ struct WeatherView: View {
                             
                             SunriseSunsetCard(sunset: result.sunset, sunrise: result.sunrise)
                             Spacer(minLength: 12)
-                            CloudinessVisibilityCard()
+                            CloudinessVisibilityCard(visibility: result.visibility, cloudiness: result.cloudiness)
                         }
                         
                         Spacer(minLength: 12)
@@ -46,13 +46,16 @@ struct WeatherView: View {
                         HStack {
                             HumidityPressureCard(pressure: result.pressure, humidity: result.humidity)
                             Spacer(minLength: 12)
-                            WindSpeedAndDirectionCard(windSpeed: networkManager.result!.wind_speed, windDirection: networkManager.result!.wind_direction)
+                            WindSpeedAndDirectionCard(windSpeed: result.wind_speed, windDirection: result.wind_direction)
                         }
                     }
                 }
                 .navigationTitle(networkManager.result?.location_full_name ?? "--")
                 .padding()
                 .background(Color("background"))
+                .onChange(of: locationManager) {
+                    networkManager.fetchWeatherByLocation(coordinate: location)
+                }
             }
         }
         

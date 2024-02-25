@@ -63,6 +63,7 @@ class NetworkManager {
             let wind_speed = decodedData.wind.speed
             let wind_degree = decodedData.wind.deg
             let cloudiness = decodedData.clouds.all
+            let visibility = decodedData.visibility
             let city_name = decodedData.name
             let country = decodedData.sys.country
             
@@ -75,12 +76,11 @@ class NetworkManager {
             let sunsetDate = Date(timeIntervalSince1970: decodedData.sys.sunset)
             let sunset = dateFormatter.string(from: sunsetDate)
             
-            print("Sunrise: \(sunrise)\nSunset: \(sunset)")
-            
-            result = WeatherModel(weather_id: weather_id, weather_desc: weather_desc, weather_icon: weather_icon, temperature: temperature, min_temp: min_temp, max_temp: max_temp, temp_feels_like: temp_feels_like, pressure: pressure, humidity: humidity, wind_speed: wind_speed, wind_degree: wind_degree, cloudiness: cloudiness, city_name: city_name, country: country, sunrise: sunrise, sunset: sunset)
+            result = WeatherModel(weather_id: weather_id, weather_desc: weather_desc, weather_icon: weather_icon, temperature: temperature, min_temp: min_temp, max_temp: max_temp, temp_feels_like: temp_feels_like, pressure: pressure, humidity: humidity, wind_speed: wind_speed, wind_degree: wind_degree, cloudiness: cloudiness, visibility: visibility, city_name: city_name, country: country, sunrise: sunrise, sunset: sunset)
             
         } catch {
-            print("Could Not Prase the JSON because : \(error.localizedDescription)")
+            print("Could Not Prase the JSON because: \(error.localizedDescription)")
+            print("Error: \(error)")
         }
     }
 }

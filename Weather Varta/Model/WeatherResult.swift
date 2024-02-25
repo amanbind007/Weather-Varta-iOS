@@ -10,6 +10,7 @@ import Foundation
 struct WeatherResult: Codable {
     var weather: [Weather]
     var main: Temperature
+    var visibility: Double
     var wind: Wind
     var clouds: Cloud
     var sys: System
