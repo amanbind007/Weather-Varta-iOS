@@ -14,8 +14,9 @@ class NetworkManager {
     
     var result: WeatherModel?
     
+    var errorLoading: Bool = false
+    
     func fetchWeatherByName(city: String) {
-        print("City: \(city)")
         let session = URLSession(configuration: .default)
         
         let url = URL(string: base_url + "q=\(city)&appid=67108a2cd62a3051587cb3ad432b9423&units=metric")
@@ -26,11 +27,14 @@ class NetworkManager {
                 if let safeData = data {
                     self.parseJSON(safeData)
                 }
+            } else {
+                self.errorLoading = true
             }
         }.resume()
     }
     
     func fetchWeatherByLocation(coordinate: CLLocationCoordinate2D) {
+        
         let session = URLSession(configuration: .default)
         
         let url = URL(string: base_url + "lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&appid=67108a2cd62a3051587cb3ad432b9423&units=imperial")
@@ -42,6 +46,9 @@ class NetworkManager {
                     self.parseJSON(safeData)
                 }
             }
+            else{
+                self.errorLoading = true
+            }
         }.resume()
     }
     
@@ -50,6 +57,7 @@ class NetworkManager {
         
         do {
             let decodedData = try decoder.decode(WeatherResult.self, from: weatherData)
+            
 
             let weather_id = decodedData.weather[0].id
             let weather_desc = decodedData.weather[0].description
@@ -81,6 +89,7 @@ class NetworkManager {
         } catch {
             print("Could Not Prase the JSON because: \(error.localizedDescription)")
             print("Error: \(error)")
+            errorLoading = true
         }
     }
 }

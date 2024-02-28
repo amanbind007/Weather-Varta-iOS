@@ -7,6 +7,7 @@
 
 import CoreLocationUI
 import SwiftUI
+import AlertToast
 
 struct WeatherView: View {
     @State private var searchCity: String = ""
@@ -57,6 +58,9 @@ struct WeatherView: View {
                 .background(Color("background"))
                 .onChange(of: locationManager.location) {
                     networkManager.fetchWeatherByLocation(coordinate: location)
+                }
+                .toast(isPresenting: $networkManager.errorLoading) {
+                    AlertToast(displayMode: .alert, type: .error(.red), title: "Location Not Found")
                 }
             }
         }

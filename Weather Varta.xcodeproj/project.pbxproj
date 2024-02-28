@@ -14,7 +14,6 @@
 		5C6CFFE32B890F7D00425824 /* HumidityPressureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE22B890F7D00425824 /* HumidityPressureCard.swift */; };
 		5C6CFFE52B890FC700425824 /* WindSpeedAndDirectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE42B890FC700425824 /* WindSpeedAndDirectionCard.swift */; };
 		5C6CFFE72B89101F00425824 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6CFFE62B89101F00425824 /* SearchBarView.swift */; };
-		5C8BF55F2B8A2BB60099903C /* WeatherViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BF55E2B8A2BB60099903C /* WeatherViewViewModel.swift */; };
 		5C9FFE752B84FEF5000B5B4D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9FFE742B84FEF5000B5B4D /* WeatherModel.swift */; };
 		5CA592782B83C247003431E4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA592772B83C247003431E4 /* LocationManager.swift */; };
 		5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */; };
@@ -22,7 +21,8 @@
 		5CC47D552B77D82200D9BD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC47D542B77D82200D9BD3D /* Assets.xcassets */; };
 		5CC47D582B77D82200D9BD3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC47D572B77D82200D9BD3D /* Preview Assets.xcassets */; };
 		5CC47D622B77DF8600D9BD3D /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D612B77DF8600D9BD3D /* WeatherResult.swift */; };
-		5CE4BA6F2B8F9A14007FF89E /* Location+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4BA6E2B8F9A14007FF89E /* Location+Extension.swift */; };
+		5CE4BA6F2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4BA6E2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift */; };
+		5CE4BA722B8F9FF1007FF89E /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5CE4BA712B8F9FF1007FF89E /* AlertToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,6 @@
 		5C6CFFE22B890F7D00425824 /* HumidityPressureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityPressureCard.swift; sourceTree = "<group>"; };
 		5C6CFFE42B890FC700425824 /* WindSpeedAndDirectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindSpeedAndDirectionCard.swift; sourceTree = "<group>"; };
 		5C6CFFE62B89101F00425824 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
-		5C8BF55E2B8A2BB60099903C /* WeatherViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewViewModel.swift; sourceTree = "<group>"; };
 		5C9FFE742B84FEF5000B5B4D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		5CA592772B83C247003431E4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5CC47D4D2B77D82000D9BD3D /* Weather Varta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Varta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +41,7 @@
 		5CC47D542B77D82200D9BD3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CC47D572B77D82200D9BD3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5CC47D612B77DF8600D9BD3D /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
-		5CE4BA6E2B8F9A14007FF89E /* Location+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Extension.swift"; sourceTree = "<group>"; };
+		5CE4BA6E2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE4BA722B8F9FF1007FF89E /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,6 @@
 				5CC47D502B77D82000D9BD3D /* Weather_VartaApp.swift */,
 				5CA592762B83C21D003431E4 /* Managers */,
 				5CC47D602B77DF6000D9BD3D /* Model */,
-				5CC47D5F2B77D90B00D9BD3D /* ViewModel */,
 				5CC47D5E2B77D8FD00D9BD3D /* Views */,
 				5CC47D542B77D82200D9BD3D /* Assets.xcassets */,
 				5CC47D562B77D82200D9BD3D /* Preview Content */,
@@ -126,14 +125,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5CC47D5F2B77D90B00D9BD3D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				5C8BF55E2B8A2BB60099903C /* WeatherViewViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		5CC47D602B77DF6000D9BD3D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +137,7 @@
 		5CE4BA6D2B8F99F7007FF89E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5CE4BA6E2B8F9A14007FF89E /* Location+Extension.swift */,
+				5CE4BA6E2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +158,9 @@
 			dependencies = (
 			);
 			name = "Weather Varta";
+			packageProductDependencies = (
+				5CE4BA712B8F9FF1007FF89E /* AlertToast */,
+			);
 			productName = "Weather Varta";
 			productReference = 5CC47D4D2B77D82000D9BD3D /* Weather Varta.app */;
 			productType = "com.apple.product-type.application";
@@ -195,6 +189,9 @@
 				Base,
 			);
 			mainGroup = 5CC47D442B77D82000D9BD3D;
+			packageReferences = (
+				5CE4BA702B8F9FF1007FF89E /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 5CC47D4E2B77D82000D9BD3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,7 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C6CFFDD2B890E5400425824 /* WeatherCard.swift in Sources */,
-				5C8BF55F2B8A2BB60099903C /* WeatherViewViewModel.swift in Sources */,
 				5C0536CF2B8269FA000E05B5 /* NetworkManager.swift in Sources */,
 				5CC47D532B77D82000D9BD3D /* WeatherView.swift in Sources */,
 				5CA592782B83C247003431E4 /* LocationManager.swift in Sources */,
@@ -231,7 +227,7 @@
 				5C9FFE752B84FEF5000B5B4D /* WeatherModel.swift in Sources */,
 				5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */,
 				5C6CFFE52B890FC700425824 /* WindSpeedAndDirectionCard.swift in Sources */,
-				5CE4BA6F2B8F9A14007FF89E /* Location+Extension.swift in Sources */,
+				5CE4BA6F2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				5C6CFFE32B890F7D00425824 /* HumidityPressureCard.swift in Sources */,
 				5C6CFFE12B890F2A00425824 /* CloudinessVisibilityCard.swift in Sources */,
 				5C6CFFDF2B890EE800425824 /* SunriseSunsetCard.swift in Sources */,
@@ -442,6 +438,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CE4BA702B8F9FF1007FF89E /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CE4BA712B8F9FF1007FF89E /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CE4BA702B8F9FF1007FF89E /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CC47D452B77D82000D9BD3D /* Project object */;
 }
