@@ -14,6 +14,7 @@ struct WeatherCard: View {
     var temp_max: String
     var icon: String
     var feels_like: String
+    var description: String
     
     var body: some View {
         VStack {
@@ -35,7 +36,7 @@ struct WeatherCard: View {
             })
             .offset(y: 20)
             
-            Text("Clear")
+            Text("\(description)")
                 .offset(y: 10)
                 
             HStack {
@@ -79,5 +80,5 @@ struct WeatherCard: View {
 }
 
 #Preview {
-    WeatherCard(temp: "25.6", temp_min: "15.0", temp_max: "30.5", icon: "cloud", feels_like: "27.0")
+    WeatherCard(temp: "25.6", temp_min: "15.0", temp_max: "30.5", icon: "cloud", feels_like: "27.0", description: "clear")
 }

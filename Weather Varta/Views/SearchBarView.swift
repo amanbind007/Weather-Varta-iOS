@@ -38,6 +38,7 @@ struct SearchBarView: View {
                 
             Button(action: {
                 locationManager.requestLocation()
+                networkManager.fetchWeatherByLocation(coordinate: locationManager.location!)
                 
             }, label: {
                 Image(systemName: "location.circle.fill")

@@ -19,8 +19,10 @@ struct WeatherView: View {
     var body: some View {
         if let location = locationManager.location {
             if networkManager.result == nil {
-                ProgressView().onAppear(perform: {
+                ProgressView()
+                    .onAppear(perform: {
                     networkManager.fetchWeatherByLocation(coordinate: location)
+                        
                 })
             }
             else if let result = networkManager.result {
@@ -30,7 +32,7 @@ struct WeatherView: View {
                         
                         Spacer(minLength: 12)
                         
-                        WeatherCard(temp: result.temperature_string, temp_min: result.min_temp_string, temp_max: result.max_temp_string, icon: result.icon_String, feels_like: result.temp_feels_like_string)
+                        WeatherCard(temp: result.temperature_string, temp_min: result.min_temp_string, temp_max: result.max_temp_string, icon: result.icon_String, feels_like: result.temp_feels_like_string, description: result.weather_desc)
                         
                         Spacer(minLength: 12)
                         
@@ -53,16 +55,26 @@ struct WeatherView: View {
                 .navigationTitle(networkManager.result?.location_full_name ?? "--")
                 .padding()
                 .background(Color("background"))
-                .onChange(of: locationManager) {
+                .onChange(of: locationManager.location) {
                     networkManager.fetchWeatherByLocation(coordinate: location)
                 }
             }
         }
         
         else {
+            
+            Text("Provide \"Current Location\" by clicking the below button to Proceed forward")
+                .frame(width: 250, height: 150)
+                .font(.title3)
+                .multilineTextAlignment(.center)
+                
+            
             LocationButton {
                 locationManager.requestLocation()
             }
+            .tint(Color.backgroundCardBig)
+            .foregroundStyle(theme == .dark ? Color.white : Color.black)
+            .clipShape(RoundedRectangle(cornerRadius: 25.0))
         }
     }
 }

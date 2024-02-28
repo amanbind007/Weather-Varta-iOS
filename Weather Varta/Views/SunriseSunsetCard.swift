@@ -24,27 +24,30 @@ struct SunriseSunsetCard: View {
     
     var body: some View {
         HStack {
-            VStack {
+            Spacer()
+            VStack{
                 Image(systemName: "sunrise.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 25)
                 
-                HStack {
-                    Text(sunrise_time)
-                        .font(.title3)
-                        .offset(y: -5)
-                    Text(sunrise_meridian)
-                        .font(.caption2)
-                        .offset(x: -6, y: -5)
-                }
+                Text(sunrise_time)
+                    .font(.title3)
+                    
+                Text(sunrise_meridian)
+                    .font(.caption2)
+                    .offset(y: -8)
                 
                 Text("SUNRISE")
                     .font(.caption2)
             }
-            .offset(x: 5)
+            
+            
+            Spacer()
             
             Divider()
+            
+            Spacer()
             
             VStack {
                 Image(systemName: "sunset.fill")
@@ -52,17 +55,18 @@ struct SunriseSunsetCard: View {
                     .scaledToFit()
                     .frame(width: 25)
                 
-                HStack {
-                    Text(sunset_time)
-                        .font(.title3)
-                        .offset(y: -5)
-                    Text(sunset_meridian)
-                        .font(.caption2)
-                        .offset(x: -6, y: -5)
-                }
+                Text(sunset_time)
+                    .font(.title3)
+                    
+                Text(sunset_meridian)
+                    .font(.caption2)
+                    .offset(y: -8)
+                
                 Text("SUNSET")
                     .font(.caption2)
             }
+            
+            Spacer()
         }
         .frame(width: 173, height: 140)
         .background(Color("background_card"))
@@ -71,5 +75,5 @@ struct SunriseSunsetCard: View {
 }
 
 #Preview {
-    SunriseSunsetCard(sunset: "06:30 PM", sunrise: "06:30: AM")
+    SunriseSunsetCard(sunset: "06:30 PM", sunrise: "06:30 AM")
 }
