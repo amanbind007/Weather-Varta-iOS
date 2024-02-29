@@ -23,6 +23,7 @@
 		5CC47D622B77DF8600D9BD3D /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC47D612B77DF8600D9BD3D /* WeatherResult.swift */; };
 		5CE4BA6F2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4BA6E2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift */; };
 		5CE4BA722B8F9FF1007FF89E /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5CE4BA712B8F9FF1007FF89E /* AlertToast */; };
+		5CE4BA742B905A95007FF89E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE4BA732B905A95007FF89E /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5CC47D572B77D82200D9BD3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5CC47D612B77DF8600D9BD3D /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
 		5CE4BA6E2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
+		5CE4BA732B905A95007FF89E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		5C8BF55D2B8A2AAB0099903C /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				5CE4BA732B905A95007FF89E /* Constant.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				5C6CFFE72B89101F00425824 /* SearchBarView.swift in Sources */,
 				5CC47D622B77DF8600D9BD3D /* WeatherResult.swift in Sources */,
 				5C9FFE752B84FEF5000B5B4D /* WeatherModel.swift in Sources */,
+				5CE4BA742B905A95007FF89E /* Constant.swift in Sources */,
 				5CC47D512B77D82000D9BD3D /* Weather_VartaApp.swift in Sources */,
 				5C6CFFE52B890FC700425824 /* WindSpeedAndDirectionCard.swift in Sources */,
 				5CE4BA6F2B8F9A14007FF89E /* CLLocationCoordinate2D+Extension.swift in Sources */,

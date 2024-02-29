@@ -10,8 +10,6 @@ import Foundation
 
 @Observable
 class NetworkManager {
-    let base_url = "https://api.openweathermap.org/data/2.5/weather?"
-    
     var result: WeatherModel?
     
     var errorLoading: Bool = false
@@ -19,7 +17,7 @@ class NetworkManager {
     func fetchWeatherByName(city: String) {
         let session = URLSession(configuration: .default)
         
-        let url = URL(string: base_url + "q=\(city)&appid=67108a2cd62a3051587cb3ad432b9423&units=metric")
+        let url = URL(string: Constants.Endpoints.BASEURL + "q=\(city)&appid=\(Constants.Key.APIKEY)&units=metric")
         
         session.dataTask(with: URLRequest(url: url!)) { data, _, error in
             
@@ -34,10 +32,9 @@ class NetworkManager {
     }
     
     func fetchWeatherByLocation(coordinate: CLLocationCoordinate2D) {
-        
         let session = URLSession(configuration: .default)
         
-        let url = URL(string: base_url + "lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&appid=67108a2cd62a3051587cb3ad432b9423&units=imperial")
+        let url = URL(string: Constants.Endpoints.BASEURL + "lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&appid=\(Constants.Key.APIKEY)&units=metric")
         
         session.dataTask(with: URLRequest(url: url!)) { data, _, error in
             
@@ -45,8 +42,7 @@ class NetworkManager {
                 if let safeData = data {
                     self.parseJSON(safeData)
                 }
-            }
-            else{
+            } else {
                 self.errorLoading = true
             }
         }.resume()
@@ -58,7 +54,6 @@ class NetworkManager {
         do {
             let decodedData = try decoder.decode(WeatherResult.self, from: weatherData)
             
-
             let weather_id = decodedData.weather[0].id
             let weather_desc = decodedData.weather[0].description
             let weather_icon = decodedData.weather[0].icon
