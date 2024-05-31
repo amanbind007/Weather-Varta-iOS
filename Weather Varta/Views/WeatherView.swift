@@ -52,6 +52,9 @@ struct WeatherView: View {
                             WindSpeedAndDirectionCard(windSpeed: result.wind_speed, windDirection: result.wind_direction)
                         }
                     }
+                    .refreshable {
+                        networkManager.fetchWeatherByLocation(coordinate: location)
+                    }
                 }
                 .navigationTitle(networkManager.result?.location_full_name ?? "--")
                 .padding()
